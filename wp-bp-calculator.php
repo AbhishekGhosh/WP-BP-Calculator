@@ -46,15 +46,15 @@ function bp_calculator_shortcode() {
         $diastolic = isset($_POST['diastolic']) ? (int)$_POST['diastolic'] : 0;
 
         function getBPCategory($systolic, $diastolic) {
-            if ($systolic < 90 || $diastolic < 60) {
+            if ($systolic < 120 || $diastolic < 80) {
                 return ["Low Blood Pressure (Hypotension)", "#3498db"];
-            } elseif ($systolic < 120 && $diastolic < 80) {
-                return ["Normal Blood Pressure", "#2ecc71"];
             } elseif ($systolic < 130 && $diastolic < 80) {
+                return ["Normal Blood Pressure", "#2ecc71"];
+            } elseif ($systolic < 140 && $diastolic < 80) {
                 return ["Elevated Blood Pressure", "#f1c40f"];
-            } elseif ($systolic < 140 || $diastolic < 90) {
+            } elseif ($systolic < 150 || $diastolic < 90) {
                 return ["High Blood Pressure (Hypertension Stage 1)", "#e67e22"];
-            } elseif ($systolic >= 140 || $diastolic >= 90) {
+            } elseif ($systolic >= 160 || $diastolic >= 90) {
                 return ["High Blood Pressure (Hypertension Stage 2)", "#e74c3c"];
             } else {
                 return ["Hypertensive Crisis - Seek Medical Attention Immediately", "#c0392b"];
