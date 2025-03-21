@@ -48,7 +48,7 @@ function bp_calculator_shortcode() {
         function getBPCategory($systolic, $diastolic) {
             if ($systolic < 120 || $diastolic < 80) {
                 return ["Low Blood Pressure (Hypotension)", "#3498db"];
-            } elseif ($systolic < 130 && $diastolic < 80) {
+            } elseif ($systolic <= 130 && $diastolic <= 80) {
                 return ["Normal Blood Pressure", "#2ecc71"];
             } elseif ($systolic < 140 && $diastolic < 80) {
                 return ["Elevated Blood Pressure", "#f1c40f"];
